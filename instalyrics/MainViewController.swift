@@ -10,48 +10,33 @@ import UIKit
 
 class MainViewController: UIViewController, SongLogicsDelegate {
 
-    var UIApplicationDidBecomeActiveNotificationObserver : AnyObject?
     var songLogics: SongLogics = SongLogics()
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.songLogics.delegate = self
-        self.addObservers()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-    override func viewWillAppear(animated: Bool) {
-
-    }
-    
-    func addObservers(){
-        self.UIApplicationDidBecomeActiveNotificationObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidBecomeActiveNotification, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: { [unowned self] (notification) -> Void in
-            self.processCurrentSong()
-        })
-    }
-    
-    func removeObservers(){
-        NSNotificationCenter.defaultCenter().removeObserver(self.UIApplicationDidBecomeActiveNotificationObserver!, name: UIApplicationDidBecomeActiveNotification, object: nil)
-    }
-    
     func processCurrentSong(){
+        self.songLogics.updateCurrentSong()
+    }
+    
+    func updateUI(){
         
-        self.songLogics.printCurrentSong()
-
-
+        self.titleLabel.text = self.songLogics.currentSong?.title
+        self.artistLabel.text = self.songLogics.currentSong?.artist
     }
     
     
     // MARK: - SongLogicsDelegate methods
+    
     func songDidChange() {
-        self.processCurrentSong()
-
+        self.updateUI()
     }
 }
 

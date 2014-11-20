@@ -29,17 +29,19 @@ class SongLogics: NSObject {
         self.iPodMusicPlayer = MPMusicPlayerController.iPodMusicPlayer()
         self.addObservers()
     }
+    
+    deinit{
+        self.removeObservers()
+    }
         
-    func printCurrentSong(){
+    func updateCurrentSong(){
         
         self.currentSong = Song()
         
         if let item = MPMusicPlayerController.iPodMusicPlayer().nowPlayingItem{
             self.currentSong?.parseMediaPlayerItem(item)
         }
-
         println("reproducing \(self.currentSong?.songDescription())")
-        
     }
     
     
@@ -47,6 +49,7 @@ class SongLogics: NSObject {
         
         self.itemChangedObserver = NSNotificationCenter.defaultCenter().addObserverForName(MPMusicPlayerControllerNowPlayingItemDidChangeNotification, object: self.iPodMusicPlayer, queue: NSOperationQueue.mainQueue(), usingBlock: { [unowned self] (notification) -> Void in
             
+            self.updateCurrentSong()
             if let udelegate = self.delegate{
                 udelegate.songDidChange()
             }
@@ -60,6 +63,10 @@ class SongLogics: NSObject {
         self.iPodMusicPlayer.beginGeneratingPlaybackNotifications()
     }
     
+    func removeObservers(){
+        NSNotificationCenter.defaultCenter().removeObserver(self.itemChangedObserver!, name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self.playbackStatusChangedObserver!, name: MPMusicPlayerControllerPlaybackStateDidChangeNotification, object: nil)
+    }
 
 }
 
