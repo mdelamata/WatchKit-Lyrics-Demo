@@ -22,17 +22,8 @@ class LyricsDAO {
         println(">>>>>> " + escapedAddress!)
         
         Alamofire.request(.GET, escapedAddress!, parameters: nil)
-            
-            .response { (request, response, data, error) in
-//                let xml = SWXMLHash.parse(data as NSData)
-//                println(xml["GetLyricResult"]["Lyric"].element?.text)
-//                completion?(xml["GetLyricResult"]["Lyric"].element?.text, nil)
-
-            }
-            
             .responseString { (request, response, string, error) in
                 
-                println(string)
                 if let responseString = string {
                     
                     let startRange  = responseString.rangeOfString("<Lyric>")
@@ -48,33 +39,7 @@ class LyricsDAO {
                     }else{
                         completion?(nil, nil)
                     }
-
                 }
-                
-                
-//                let data = string!.dataUsingEncoding(NSUTF8StringEncoding)
-//                var parseError: NSError?
-//                
-//                if let uData = data{
-//
-//
-//                    
-//
-//                    let xml = SWXMLHash.parse(uData)
-//                    
-//                    println(xml["GetLyricResult"]["Lyric"].element?.text)
-//                    completion?(xml["GetLyricResult"]["Lyric"].element?.text, nil)
-//
-//                    if let xmlDoc = AEXMLDocument(xmlData: uData , error: &parseError) {
-//                        //println(xmlDoc.rootElement["Lyric"].value)
-//
-//                        //completion?(xmlDoc.rootElement["Lyric"].value, nil)
-//                    }
-//                }
-//                
-//                if parseError != nil || error != nil {
-//                    completion?(nil, error)
-//                }
         }
     }
 }
