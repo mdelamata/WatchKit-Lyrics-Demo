@@ -16,6 +16,10 @@
 		79F732441A1E73910071A05B /* SongLogics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F732431A1E73910071A05B /* SongLogics.swift */; };
 		79F732461A1E74580071A05B /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F732451A1E74580071A05B /* Song.swift */; };
 		79F732481A1E74CB0071A05B /* Song_Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F732471A1E74CB0071A05B /* Song_Extras.swift */; };
+		79F7325A1A1E8E620071A05B /* Alamofire.framework in Copy Files (1 item) */ = {isa = PBXBuildFile; fileRef = 79F732531A1E8CF50071A05B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		79F7325F1A1E90C00071A05B /* LyricsDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F7325E1A1E90C00071A05B /* LyricsDAO.swift */; };
+		79F732631A1EA31E0071A05B /* AEXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F732621A1EA31E0071A05B /* AEXML.swift */; };
+		79F732651A1EB6350071A05B /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F732641A1EB6350071A05B /* SWXMLHash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,7 +30,42 @@
 			remoteGlobalIDString = 79F7321D1A1E6E5B0071A05B;
 			remoteInfo = instalyrics;
 		};
+		79F732521A1E8CF50071A05B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79F7324D1A1E8CF50071A05B /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		79F732541A1E8CF50071A05B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79F7324D1A1E8CF50071A05B /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		79F732571A1E8D6B0071A05B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79F7324D1A1E8CF50071A05B /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		79F732591A1E8E480071A05B /* Copy Files (1 item) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				79F7325A1A1E8E620071A05B /* Alamofire.framework in Copy Files (1 item) */,
+			);
+			name = "Copy Files (1 item)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		79F7321E1A1E6E5B0071A05B /* instalyrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instalyrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +81,10 @@
 		79F732431A1E73910071A05B /* SongLogics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLogics.swift; sourceTree = "<group>"; };
 		79F732451A1E74580071A05B /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		79F732471A1E74CB0071A05B /* Song_Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song_Extras.swift; sourceTree = "<group>"; };
+		79F7324D1A1E8CF50071A05B /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		79F7325E1A1E90C00071A05B /* LyricsDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyricsDAO.swift; sourceTree = "<group>"; };
+		79F732621A1EA31E0071A05B /* AEXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEXML.swift; sourceTree = "<group>"; };
+		79F732641A1EB6350071A05B /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +111,7 @@
 				79F732201A1E6E5B0071A05B /* instalyrics */,
 				79F732361A1E6E5B0071A05B /* instalyricsTests */,
 				79F7321F1A1E6E5B0071A05B /* Products */,
+				79F7324D1A1E8CF50071A05B /* Alamofire.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,13 +128,13 @@
 			isa = PBXGroup;
 			children = (
 				79F732231A1E6E5B0071A05B /* AppDelegate.swift */,
-				79F732251A1E6E5B0071A05B /* MainViewController.swift */,
-				79F732431A1E73910071A05B /* SongLogics.swift */,
-				79F732451A1E74580071A05B /* Song.swift */,
-				79F732471A1E74CB0071A05B /* Song_Extras.swift */,
-				79F732271A1E6E5B0071A05B /* Main.storyboard */,
-				79F7322A1A1E6E5B0071A05B /* Images.xcassets */,
 				79F7322C1A1E6E5B0071A05B /* LaunchScreen.xib */,
+				79F732271A1E6E5B0071A05B /* Main.storyboard */,
+				79F7325D1A1E8EAE0071A05B /* Main */,
+				79F7325C1A1E8EA40071A05B /* Models */,
+				79F7325B1A1E8E970071A05B /* Logics */,
+				79F732601A1EA31E0071A05B /* SDK */,
+				79F7322A1A1E6E5B0071A05B /* Images.xcassets */,
 				79F732211A1E6E5B0071A05B /* Supporting Files */,
 			);
 			path = instalyrics;
@@ -121,6 +165,58 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		79F7324E1A1E8CF50071A05B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79F732531A1E8CF50071A05B /* Alamofire.framework */,
+				79F732551A1E8CF50071A05B /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79F7325B1A1E8E970071A05B /* Logics */ = {
+			isa = PBXGroup;
+			children = (
+				79F732431A1E73910071A05B /* SongLogics.swift */,
+				79F7325E1A1E90C00071A05B /* LyricsDAO.swift */,
+			);
+			name = Logics;
+			sourceTree = "<group>";
+		};
+		79F7325C1A1E8EA40071A05B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				79F732451A1E74580071A05B /* Song.swift */,
+				79F732471A1E74CB0071A05B /* Song_Extras.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		79F7325D1A1E8EAE0071A05B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				79F732251A1E6E5B0071A05B /* MainViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		79F732601A1EA31E0071A05B /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				79F732611A1EA31E0071A05B /* XMLParser */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		79F732611A1EA31E0071A05B /* XMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				79F732641A1EB6350071A05B /* SWXMLHash.swift */,
+				79F732621A1EA31E0071A05B /* AEXML.swift */,
+			);
+			path = XMLParser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,10 +227,12 @@
 				79F7321A1A1E6E5B0071A05B /* Sources */,
 				79F7321B1A1E6E5B0071A05B /* Frameworks */,
 				79F7321C1A1E6E5B0071A05B /* Resources */,
+				79F732591A1E8E480071A05B /* Copy Files (1 item) */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				79F732581A1E8D6B0071A05B /* PBXTargetDependency */,
 			);
 			name = instalyrics;
 			productName = instalyrics;
@@ -188,6 +286,12 @@
 			mainGroup = 79F732151A1E6E5B0071A05B;
 			productRefGroup = 79F7321F1A1E6E5B0071A05B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 79F7324E1A1E8CF50071A05B /* Products */;
+					ProjectRef = 79F7324D1A1E8CF50071A05B /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				79F7321D1A1E6E5B0071A05B /* instalyrics */,
@@ -195,6 +299,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		79F732531A1E8CF50071A05B /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 79F732521A1E8CF50071A05B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		79F732551A1E8CF50071A05B /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = 79F732541A1E8CF50071A05B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		79F7321C1A1E6E5B0071A05B /* Resources */ = {
@@ -222,8 +343,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				79F732461A1E74580071A05B /* Song.swift in Sources */,
+				79F732651A1EB6350071A05B /* SWXMLHash.swift in Sources */,
 				79F732481A1E74CB0071A05B /* Song_Extras.swift in Sources */,
+				79F7325F1A1E90C00071A05B /* LyricsDAO.swift in Sources */,
 				79F732261A1E6E5B0071A05B /* MainViewController.swift in Sources */,
+				79F732631A1EA31E0071A05B /* AEXML.swift in Sources */,
 				79F732241A1E6E5B0071A05B /* AppDelegate.swift in Sources */,
 				79F732441A1E73910071A05B /* SongLogics.swift in Sources */,
 			);
@@ -244,6 +368,11 @@
 			isa = PBXTargetDependency;
 			target = 79F7321D1A1E6E5B0071A05B /* instalyrics */;
 			targetProxy = 79F732341A1E6E5B0071A05B /* PBXContainerItemProxy */;
+		};
+		79F732581A1E8D6B0071A05B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = 79F732571A1E8D6B0071A05B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -417,6 +546,7 @@
 				79F7323F1A1E6E5B0071A05B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		79F732401A1E6E5B0071A05B /* Build configuration list for PBXNativeTarget "instalyricsTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +555,7 @@
 				79F732421A1E6E5B0071A05B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainViewController: UIViewController, SongLogicsDelegate {
 
@@ -14,6 +15,7 @@ class MainViewController: UIViewController, SongLogicsDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var lyricsTextView: UITextView!
     
     
     override func viewDidLoad() {
@@ -30,6 +32,10 @@ class MainViewController: UIViewController, SongLogicsDelegate {
         
         self.titleLabel.text = self.songLogics.currentSong?.title
         self.artistLabel.text = self.songLogics.currentSong?.artist
+        
+        LyricsDAO().getLyricsFor(self.songLogics.currentSong?.title, artist: self.songLogics.currentSong?.artist){ [unowned self] lyrics, error in
+            self.lyricsTextView.text = lyrics
+        }
     }
     
     

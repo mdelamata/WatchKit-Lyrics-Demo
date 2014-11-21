@@ -34,25 +34,36 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LqT-PO-ZsO">
+                                <rect key="frame" x="0.0" y="90" width="600" height="510"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LqT-PO-ZsO" secondAttribute="bottom" id="8vw-yJ-gFf"/>
+                            <constraint firstAttribute="trailing" secondItem="LqT-PO-ZsO" secondAttribute="trailing" id="9Gp-Vt-cKP"/>
                             <constraint firstItem="2Xr-cv-IaT" firstAttribute="top" secondItem="gCG-eA-IoX" secondAttribute="bottom" constant="8" id="Eaj-7A-Xei"/>
                             <constraint firstAttribute="trailing" secondItem="gCG-eA-IoX" secondAttribute="trailing" constant="5" id="GJ3-IK-GVl"/>
+                            <constraint firstItem="LqT-PO-ZsO" firstAttribute="top" secondItem="2Xr-cv-IaT" secondAttribute="bottom" constant="12.5" id="MBP-SR-gHr"/>
                             <constraint firstAttribute="trailing" secondItem="2Xr-cv-IaT" secondAttribute="trailing" constant="5" id="b3f-wa-za5"/>
                             <constraint firstItem="gCG-eA-IoX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="fPX-U2-Uls"/>
+                            <constraint firstItem="LqT-PO-ZsO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="kiM-a9-S5Y"/>
                             <constraint firstItem="2Xr-cv-IaT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="5" id="rHg-On-eYB"/>
                             <constraint firstItem="gCG-eA-IoX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="5" id="y1c-kV-gkl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="artistLabel" destination="2Xr-cv-IaT" id="Yaf-KT-fP0"/>
+                        <outlet property="lyricsTextView" destination="LqT-PO-ZsO" id="NFD-DF-60x"/>
                         <outlet property="titleLabel" destination="gCG-eA-IoX" id="FhX-HO-Bg3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="390"/>
+            <point key="canvasLocation" x="517" y="326"/>
         </scene>
     </scenes>
 </document>
