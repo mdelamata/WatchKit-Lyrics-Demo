@@ -43,14 +43,3 @@ class LyricsDAO {
         }
     }
 }
-
-
-// Lyricsnmusic
-////let apihost = "http://api.lyricsnmusic.com"
-//
-//var url = apihost + "/songs"
-//
-//var params = Dictionary<String,AnyObject>()
-//params["api_key"] = "19e19e90774fc0694f9c6af681d772"
-//params["track"] = title!
-//params["artist"] = artist!

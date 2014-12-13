@@ -16,5 +16,12 @@ class Song: NSObject {
     var composer : String?
     var genre : String?
     var duration : Int?
+    
+    
+    convenience init(title: String, artist: String) {
+        self.init()
+        self.title = title
+        self.artist = artist
+    }
 
 }

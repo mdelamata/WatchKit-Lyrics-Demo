@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C68m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -26,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xr-cv-IaT">
-                                <rect key="frame" x="5" y="57" width="590" height="20.5"/>
+                                <rect key="frame" x="5" y="57" width="590" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="h3y-EL-wNX"/>
                                 </constraints>
@@ -53,11 +54,25 @@
                                     <action selector="retryButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DSB-l3-rCe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxo-Kn-d3R" userLabel="SimulateButton">
+                                <rect key="frame" x="498" y="556" width="98" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="m2s-Wj-2i7"/>
+                                    <constraint firstAttribute="height" constant="30" id="qDO-Ai-hPn"/>
+                                </constraints>
+                                <state key="normal" title="Simulate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="simulateSong:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="U2y-sp-8uc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LqT-PO-ZsO" secondAttribute="bottom" id="8vw-yJ-gFf"/>
                             <constraint firstAttribute="trailing" secondItem="LqT-PO-ZsO" secondAttribute="trailing" id="9Gp-Vt-cKP"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Kxo-Kn-d3R" secondAttribute="bottom" constant="14" id="AHS-EN-UpS"/>
                             <constraint firstItem="2Xr-cv-IaT" firstAttribute="top" secondItem="gCG-eA-IoX" secondAttribute="bottom" constant="8" id="Eaj-7A-Xei"/>
                             <constraint firstItem="sDk-IB-AKr" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="13" id="G8X-C4-ymS"/>
                             <constraint firstAttribute="trailing" secondItem="gCG-eA-IoX" secondAttribute="trailing" constant="5" id="GJ3-IK-GVl"/>
@@ -66,6 +81,7 @@
                             <constraint firstAttribute="trailing" secondItem="2Xr-cv-IaT" secondAttribute="trailing" constant="5" id="b3f-wa-za5"/>
                             <constraint firstItem="gCG-eA-IoX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="fPX-U2-Uls"/>
                             <constraint firstItem="LqT-PO-ZsO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="kiM-a9-S5Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kxo-Kn-d3R" secondAttribute="trailing" constant="-12" id="oac-Ed-5h1"/>
                             <constraint firstItem="2Xr-cv-IaT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="5" id="rHg-On-eYB"/>
                             <constraint firstItem="gCG-eA-IoX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="5" id="y1c-kV-gkl"/>
                         </constraints>
@@ -79,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="507" y="326"/>
+            <point key="canvasLocation" x="455" y="326"/>
         </scene>
     </scenes>
     <resources>

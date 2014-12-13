@@ -34,19 +34,29 @@ class MainViewController: UIViewController, SongLogicsDelegate {
         self.titleLabel.text = self.songLogics.currentSong?.title
         self.artistLabel.text = self.songLogics.currentSong?.artist
         
-        self.downloadLyrics()
+        self.downloadLyrics(self.songLogics.currentSong?.title, artist: self.songLogics.currentSong?.artist)
 
     }
     
-    func downloadLyrics(){
+    func downloadLyrics(title: String?, artist: String?){
         
-        LyricsDAO().getLyricsFor(self.songLogics.currentSong?.title, artist: self.songLogics.currentSong?.artist){ [unowned self] lyrics, error in
+        LyricsDAO().getLyricsFor(title, artist: artist){ [unowned self] lyrics, error in
             self.lyricsTextView.text = lyrics
             
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.retryButton.transform = CGAffineTransformIdentity
             })
         }
+    }
+    
+
+    func handleWatchKitNotification(command: WatchKitCommand, reply: (([NSObject : AnyObject]!) -> Void)!) {
+
+        switch(command){
+            case WatchKitCommand.requestLyrics:
+                reply(["title" : self.titleLabel.text! ,"lyrics": self.lyricsTextView.text!])
+        }
+
     }
     
     
@@ -56,7 +66,12 @@ class MainViewController: UIViewController, SongLogicsDelegate {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.retryButton.transform = CGAffineTransformMakeScale(0, 0)
         })
-        self.downloadLyrics()
+    }
+    
+    @IBAction func simulateSong(sender: AnyObject) {
+        
+        self.songLogics.currentSong = Song(title: "Stairway To Heaven", artist: "Led Zeppelin")
+        self.updateUI()
     }
     
     // MARK: - SongLogicsDelegate methods
@@ -64,5 +79,6 @@ class MainViewController: UIViewController, SongLogicsDelegate {
     func songDidChange() {
         self.updateUI()
     }
+    
 }
 
